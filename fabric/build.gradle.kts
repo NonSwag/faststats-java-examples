@@ -9,7 +9,6 @@ tasks.compileJava {
 }
 
 dependencies {
-    compileOnly("org.jspecify:jspecify:1.0.1")
     compileOnly("net.fabricmc:fabric-loader:0.19.5")
     implementation("dev.faststats.metrics:fabric:0.30.2+mc26.1-26.3")
     include("dev.faststats.metrics:fabric:0.30.2+mc26.1-26.3")
