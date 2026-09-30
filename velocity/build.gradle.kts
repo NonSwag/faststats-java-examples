@@ -1,0 +1,24 @@
+plugins {
+    id("com.gradleup.shadow")
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+tasks.compileJava {
+    options.release.set(25)
+}
+
+repositories {
+    maven("https://repo.papermc.io/repository/maven-public/")
+}
+
+dependencies {
+    compileOnly("com.velocitypowered:velocity-api:4.2.0")
+    annotationProcessor("com.velocitypowered:velocity-api:4.2.0")
+    implementation("dev.faststats.metrics:velocity:0.30.2")
+}
+
+tasks.shadowJar {
+    // optionally relocate faststats
+    relocate("dev.faststats", "com.example.utils.faststats")
+}
